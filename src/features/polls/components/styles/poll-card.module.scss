@@ -1,0 +1,97 @@
+@use "./abstracts/media-query" as *;
+
+.container {
+  margin-top: 8px;
+  border: 1px solid var(--clr-border);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.optionsContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.optionButton {
+  position: relative;
+  width: 100%;
+  padding: 12px 16px;
+  text-align: left;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  overflow: hidden;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid var(--clr-border);
+  }
+
+  &:hover:not(:disabled) {
+    background-color: var(--clr-tweet-hover);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--clr-primary-disabled);
+    background-color: var(--clr-tweet-hover);
+  }
+
+  &:disabled {
+    cursor: default;
+  }
+}
+
+.optionContent {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.optionText {
+  color: var(--clr-secondary);
+  font-size: var(--fs-base);
+  font-weight: var(--fw-400);
+}
+
+.optionPercentage {
+  color: var(--clr-secondary);
+  font-size: var(--fs-base);
+  font-weight: var(--fw-700);
+  margin-left: 8px;
+}
+
+.optionProgress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: var(--clr-primary-opacity);
+  transition: width 0.5s ease;
+}
+
+.optionProgressVoted {
+  background-color: var(--clr-primary-opacity);
+  border: 2px solid var(--clr-primary);
+  border-radius: 14px;
+}
+
+.optionTextVoted {
+  font-weight: var(--fw-700);
+  color: var(--clr-primary);
+}
+
+.checkIcon {
+  width: 18px;
+  height: 18px;
+  margin-right: 8px;
+  fill: var(--clr-primary);
+}
+
+.footer {
+  padding: 8px 16px;
+  color: var(--clr-tertiary);
+  font-size: var(--fs-nano);
+  border-top: 1px solid var(--clr-border);
+}

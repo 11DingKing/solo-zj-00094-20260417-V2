@@ -1,0 +1,111 @@
+@use "./abstracts/media-query" as *;
+
+.container {
+  border: 1px solid var(--clr-border);
+  border-radius: 16px;
+  padding: 12px;
+  margin: 8px 0;
+
+  .optionsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+
+  .optionRow {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .optionInput {
+    flex: 1;
+    padding: 10px 12px;
+    border: 1px solid var(--clr-border);
+    border-radius: 9999px;
+    background-color: transparent;
+    color: var(--clr-secondary);
+    font-size: var(--fs-base);
+    outline: none;
+    transition: border-color 0.2s ease;
+
+    &:focus {
+      border-color: var(--clr-primary);
+    }
+
+    &::placeholder {
+      color: var(--clr-tertiary);
+    }
+  }
+
+  .removeButton {
+    padding: 8px;
+    border-radius: 9999px;
+    color: var(--clr-tertiary);
+    transition: all 0.2s ease;
+
+    &:hover {
+      background-color: var(--clr-heart-hover);
+      color: var(--clr-primary);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--clr-primary-disabled);
+    }
+  }
+
+  .actionsContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 12px;
+    border-top: 1px solid var(--clr-border);
+  }
+
+  .addButton {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 8px 16px;
+    border-radius: 9999px;
+    color: var(--clr-primary);
+    font-weight: var(--fw-700);
+    transition: all 0.2s ease;
+
+    &:hover:not(:disabled) {
+      background-color: var(--clr-primary-opacity);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--clr-primary-disabled);
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+
+  .durationSelect {
+    padding: 8px 12px;
+    border: 1px solid var(--clr-border);
+    border-radius: 9999px;
+    background-color: transparent;
+    color: var(--clr-secondary);
+    font-size: var(--fs-base);
+    outline: none;
+    cursor: pointer;
+    transition: border-color 0.2s ease;
+
+    &:focus {
+      border-color: var(--clr-primary);
+    }
+  }
+
+  .errorText {
+    color: var(--clr-primary);
+    font-size: var(--fs-nano);
+    margin-top: 4px;
+  }
+}
